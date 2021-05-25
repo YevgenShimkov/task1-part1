@@ -1,7 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 90%;
     min-height: 350px;
     margin: 0 auto;
@@ -20,7 +25,6 @@ h2 {
     width: 100px;
     height: 100px;
     background-color: #000;
-    margin: 0 auto;
 }
 
 .hidden {
@@ -30,30 +34,31 @@ h2 {
 .assignment1 {
     min-height: 350px;
     background-color: rgb(235, 235, 231);
-    /* background-color: rgb(218, 248, 204); */
+    /* background-color: rgb(255, 215, 215); */
 }
 
 .assignment1 .button_wrapper {
     width: 50%;
-    margin: 0 auto;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
 }
-
-
-/* .assignment1 .btn { */
 
 .btn {
     width: 100px;
     height: 30px;
     background-color: rgb(99, 158, 247);
     cursor: pointer;
-    margin: 0 auto;
     text-transform: uppercase;
     text-align: center;
 }
 
 .rectangle_wrapper {
+    width: 80%;
     display: flex;
+    justify-content: space-between;
+}
+
+.input_assignment4 {
+    width: 50%;
 }
