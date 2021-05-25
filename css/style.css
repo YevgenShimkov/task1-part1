@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    min-height: 350px;
+    min-height: 450px;
     margin: 0 auto;
     padding: 25px 0 50px 0;
 }
@@ -18,13 +18,13 @@ h2 {
     text-align: center;
 }
 
-
-/* .assignment1 .rectangle_black { */
-
 .rectangle {
     width: 100px;
     height: 100px;
     background-color: #000;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
 }
 
 .hidden {
@@ -34,7 +34,7 @@ h2 {
 .assignment1 {
     min-height: 350px;
     background-color: rgb(235, 235, 231);
-    /* background-color: rgb(203, 210, 252); */
+    /* background-color: rgb(252, 188, 243); */
 }
 
 .assignment1 .button_wrapper {

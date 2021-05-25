@@ -99,9 +99,9 @@ function choiseAction(currentButton) {
             checkPresence(parent, elements);
             break;
         case (currentButton == button_assingment4):
-            if (input.value.length > 0) {
+            if (input_assignment4.value.length > 0) {
                 try {
-                    elements = document.querySelectorAll(input.value);
+                    elements = document.querySelectorAll(input_assignment4.value);
                 } catch {
                     alert('enter correct selector');
                     break;
@@ -116,6 +116,9 @@ function choiseAction(currentButton) {
             } else {
                 alert('no selector, enter selector');
             };
+        case (currentButton == button_assignment8):
+            img_assignment8.src = input_assignment8.value;
+            break;
     }
 };
 
@@ -162,7 +165,7 @@ container_assignment3.insertAdjacentElement('beforeend', button_assingment3);
 const assignment4 = document.createElement('section'),
     titleAssignment4 = document.createElement('h2'),
     container_assignment4 = document.createElement('div'),
-    input = document.createElement('input'),
+    input_assignment4 = document.createElement('input'),
     button_assingment4 = document.createElement('button');
 
 assignment4.classList.add('assignment4');
@@ -170,15 +173,15 @@ container_assignment4.classList.add('container');
 titleAssignment4.textContent = 'Assignment 4';
 button_assingment4.classList.add('btn');
 button_assingment4.textContent = 'HIDE';
-input.classList.add('input_assignment4');
-input.placeholder = 'enter CSS selector (for example: .rectangle .btn .css_btn)';
+input_assignment4.classList.add('input_assignment4');
+input_assignment4.placeholder = 'enter CSS selector (for example: .rectangle .btn .css_btn)';
 
 
 assignment3.insertAdjacentElement('afterend', assignment4);
 assignment4.appendChild(container_assignment4);
 assignment4.style.backgroundColor = 'rgb(255, 215, 215)';
 container_assignment4.insertAdjacentElement('afterbegin', titleAssignment4);
-container_assignment4.insertAdjacentElement('beforeend', input);
+container_assignment4.insertAdjacentElement('beforeend', input_assignment4);
 container_assignment4.insertAdjacentElement('beforeend', button_assingment4);
 
 //  assignment 5
@@ -190,15 +193,15 @@ const assignment5 = document.createElement('section'),
 assignment5.classList.add('assignment5');
 container_assignment5.classList.add('container');
 titleAssignment5.textContent = 'Assignment 5';
-rectangle_assignment5.classList.add('rectangle')
-rectangle_assignment5.classList.add('rectangle_yellow')
+rectangle_assignment5.classList.add('rectangle');
+rectangle_assignment5.classList.add('rectangle_yellow');
 
 assignment4.insertAdjacentElement('afterend', assignment5);
 assignment5.appendChild(container_assignment5);
 assignment5.style.backgroundColor = 'rgb(203, 210, 252)';
 container_assignment5.insertAdjacentElement('beforeend', titleAssignment5);
 container_assignment5.insertAdjacentElement('beforeend', rectangle_assignment5);
-rectangle_assignment5.style.backgroundColor = ('rgb(245, 241, 9');
+rectangle_assignment5.style.backgroundColor = 'rgb(245, 241, 9)';
 rectangle_assignment5.addEventListener('click', firstAction);
 
 function firstAction() {
@@ -212,11 +215,107 @@ function changeAction() {
 }
 
 function secondAction() {
-    console.log()
     hiddenElement(assignment5.querySelectorAll('.rectangle_yellow'));
 }
 
+//  assignment 6
+const assignment6 = document.createElement('section'),
+    titleAssignment6 = document.createElement('h2'),
+    container_assignment6 = document.createElement('div'),
+    rectangle_assignment6 = document.createElement('div'),
+    button_assingment6 = document.createElement('button');
 
+assignment6.classList.add('assignment6');
+container_assignment6.classList.add('container');
+titleAssignment6.textContent = 'Assignment 6';
+rectangle_assignment6.textContent = 'Magic! YEP? :-D'
+rectangle_assignment6.classList.add('rectangle');
+rectangle_assignment6.classList.add('rectangle_red');
+rectangle_assignment6.classList.add('hidden');
+button_assingment6.classList.add('btn');
+button_assingment6.textContent = 'SHOW INVISIBLE';
+button_assingment6.style.height = '40px';
+
+assignment5.insertAdjacentElement('afterend', assignment6);
+assignment6.appendChild(container_assignment6);
+assignment6.style.backgroundColor = 'rgb(227, 252, 203)';
+container_assignment6.insertAdjacentElement('beforeend', titleAssignment6);
+container_assignment6.insertAdjacentElement('beforeend', rectangle_assignment6);
+container_assignment6.insertAdjacentElement('beforeend', button_assingment6);
+rectangle_assignment6.style.backgroundColor = 'rgb(255, 0, 0)';
+rectangle_assignment6.style.width = '50px';
+rectangle_assignment6.style.height = '50px';
+
+button_assingment6.addEventListener('mouseover', () => {
+    removeHiddenStyle(container_assignment6.querySelectorAll(".rectangle_red"));
+});
+button_assingment6.addEventListener('mouseout', () => {
+    hiddenElement(container_assignment6.querySelectorAll(".rectangle_red"));
+});
+
+//  assignment 7
+const assignment7 = document.createElement('section'),
+    titleAssignment7 = document.createElement('h2'),
+    container_assignment7 = document.createElement('div'),
+    input_assignment7 = document.createElement('input'),
+    rectangle_assignment7 = document.createElement('div');
+
+assignment7.classList.add('assignment7');
+container_assignment7.classList.add('container');
+rectangle_assignment7.classList.add('rectangle');
+rectangle_assignment7.classList.add('rectangle_green');
+rectangle_assignment7.classList.add('hidden');
+titleAssignment7.textContent = 'Assignment 7';
+input_assignment7.classList.add('input_assignment7');
+input_assignment7.placeholder = 'type';
+rectangle_assignment7.style.backgroundColor = 'rgb(16, 143, 5)';
+rectangle_assignment7.style.width = '50px';
+rectangle_assignment7.style.height = '20px';
+
+assignment6.insertAdjacentElement('afterend', assignment7);
+assignment7.appendChild(container_assignment7);
+assignment7.style.backgroundColor = 'rgb(209, 209, 209)';
+container_assignment7.insertAdjacentElement('afterbegin', titleAssignment7);
+container_assignment7.insertAdjacentElement('beforeend', rectangle_assignment7);
+container_assignment7.insertAdjacentElement('beforeend', input_assignment7);
+
+input_assignment7.addEventListener('click', () => {
+    removeHiddenStyle(container_assignment7.querySelectorAll(".rectangle_green"));
+});
+
+input_assignment7.addEventListener('keydown', () => {
+    hiddenElement(container_assignment7.querySelectorAll(".rectangle_green"));
+});
+
+
+//  assignment 8
+const assignment8 = document.createElement('section'),
+    titleAssignment8 = document.createElement('h2'),
+    container_assignment8 = document.createElement('div'),
+    input_assignment8 = document.createElement('input'),
+    img_assignment8 = document.createElement('img'),
+    button_assignment8 = document.createElement('button');
+
+assignment8.classList.add('assignment8');
+container_assignment8.classList.add('container');
+img_assignment8.classList.add('img_assignment8');
+titleAssignment8.textContent = 'Assignment 8';
+input_assignment8.classList.add('input_assignment8');
+input_assignment8.placeholder = 'Insert link to picture';
+button_assignment8.classList.add('btn');
+button_assignment8.textContent = 'SHOW IMAGE';
+img_assignment8.style.height = '150px';
+img_assignment8.style.width = '150px';
+
+assignment7.insertAdjacentElement('afterend', assignment8);
+assignment8.appendChild(container_assignment8);
+
+button_assignment8.style.height = '40px';
+assignment8.style.backgroundColor = 'rgb(252, 188, 243)';
+container_assignment8.insertAdjacentElement('afterbegin', titleAssignment8);
+container_assignment8.insertAdjacentElement('beforeend', img_assignment8);
+container_assignment8.insertAdjacentElement('beforeend', input_assignment8);
+container_assignment8.insertAdjacentElement('beforeend', button_assignment8);
 
 
 
