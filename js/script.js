@@ -181,6 +181,44 @@ container_assignment4.insertAdjacentElement('afterbegin', titleAssignment4);
 container_assignment4.insertAdjacentElement('beforeend', input);
 container_assignment4.insertAdjacentElement('beforeend', button_assingment4);
 
+//  assignment 5
+const assignment5 = document.createElement('section'),
+    titleAssignment5 = document.createElement('h2'),
+    container_assignment5 = document.createElement('div'),
+    rectangle_assignment5 = document.createElement('div');
+
+assignment5.classList.add('assignment5');
+container_assignment5.classList.add('container');
+titleAssignment5.textContent = 'Assignment 5';
+rectangle_assignment5.classList.add('rectangle')
+rectangle_assignment5.classList.add('rectangle_yellow')
+
+assignment4.insertAdjacentElement('afterend', assignment5);
+assignment5.appendChild(container_assignment5);
+assignment5.style.backgroundColor = 'rgb(203, 210, 252)';
+container_assignment5.insertAdjacentElement('beforeend', titleAssignment5);
+container_assignment5.insertAdjacentElement('beforeend', rectangle_assignment5);
+rectangle_assignment5.style.backgroundColor = ('rgb(245, 241, 9');
+rectangle_assignment5.addEventListener('click', firstAction);
+
+function firstAction() {
+    alert('Hey everyone!');
+    changeAction();
+}
+
+function changeAction() {
+    rectangle_assignment5.removeEventListener('click', firstAction);
+    rectangle_assignment5.addEventListener('click', secondAction);
+}
+
+function secondAction() {
+    console.log()
+    hiddenElement(assignment5.querySelectorAll('.rectangle_yellow'));
+}
+
+
+
+
 
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {

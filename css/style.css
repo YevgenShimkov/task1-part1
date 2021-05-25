@@ -21,7 +21,7 @@ h2 {
 
 /* .assignment1 .rectangle_black { */
 
-.rectangle_black {
+.rectangle {
     width: 100px;
     height: 100px;
     background-color: #000;
@@ -34,7 +34,7 @@ h2 {
 .assignment1 {
     min-height: 350px;
     background-color: rgb(235, 235, 231);
-    /* background-color: rgb(255, 215, 215); */
+    /* background-color: rgb(203, 210, 252); */
 }
 
 .assignment1 .button_wrapper {
