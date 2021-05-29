@@ -117,7 +117,11 @@ function choiseAction(currentButton) {
                 alert('no selector, enter selector');
             };
         case (currentButton == button_assignment8):
-            img_assignment8.src = input_assignment8.value;
+            removeImg(img_wrapper_assignment8);
+            addImgs(img_wrapper_assignment8, separationInput(input_assignment8.value));
+            break;
+        case (currentButton == button_assignment9):
+            addImgs(img_wrapper_assignment9, separationInput(input_assignment9.value));
             break;
     }
 };
@@ -293,29 +297,77 @@ const assignment8 = document.createElement('section'),
     titleAssignment8 = document.createElement('h2'),
     container_assignment8 = document.createElement('div'),
     input_assignment8 = document.createElement('input'),
-    img_assignment8 = document.createElement('img'),
-    button_assignment8 = document.createElement('button');
+    button_assignment8 = document.createElement('button'),
+    img_wrapper_assignment8 = document.createElement('div');
 
 assignment8.classList.add('assignment8');
 container_assignment8.classList.add('container');
-img_assignment8.classList.add('img_assignment8');
 titleAssignment8.textContent = 'Assignment 8';
 input_assignment8.classList.add('input_assignment8');
 input_assignment8.placeholder = 'Insert link to picture';
 button_assignment8.classList.add('btn');
+button_assignment8.classList.add('btn_big');
 button_assignment8.textContent = 'SHOW IMAGE';
-img_assignment8.style.height = '150px';
-img_assignment8.style.width = '150px';
+img_wrapper_assignment8.classList.add('img_wrapper');
+
 
 assignment7.insertAdjacentElement('afterend', assignment8);
 assignment8.appendChild(container_assignment8);
 
-button_assignment8.style.height = '40px';
 assignment8.style.backgroundColor = 'rgb(252, 188, 243)';
 container_assignment8.insertAdjacentElement('afterbegin', titleAssignment8);
-container_assignment8.insertAdjacentElement('beforeend', img_assignment8);
+container_assignment8.insertAdjacentElement('beforeend', img_wrapper_assignment8);
 container_assignment8.insertAdjacentElement('beforeend', input_assignment8);
 container_assignment8.insertAdjacentElement('beforeend', button_assignment8);
+
+function removeImg(parentNode) {
+    if (parentNode.querySelector('img') != null) {
+        parentNode.querySelector('img').remove();
+    }
+}
+
+function separationInput(inputValue) {
+    return inputValue.split('\n');
+}
+
+function addImgs(parentNode, imgList) {
+    for (let i = 0; i < imgList.length; i++) {
+        let img = document.createElement('img');
+        img.src = imgList[i];
+        parentNode.insertAdjacentElement('beforeend', img);
+    }
+}
+
+//  assignment 9
+const assignment9 = document.createElement('section'),
+    titleAssignment9 = document.createElement('h2'),
+    container_assignment9 = document.createElement('div'),
+    input_assignment9 = document.createElement('textarea'),
+    img_wrapper_assignment9 = document.createElement('div'),
+    button_assignment9 = document.createElement('button');
+
+assignment9.classList.add('assignment9');
+container_assignment9.classList.add('container');
+titleAssignment9.textContent = 'Assignment 9';
+input_assignment9.classList.add('input_assignment9');
+input_assignment9.placeholder = 'Insert link to pictures';
+button_assignment9.classList.add('btn');
+button_assignment9.classList.add('btn_big');
+button_assignment9.textContent = 'SHOW IMAGE';
+img_wrapper_assignment9.classList.add('img_wrapper');
+
+assignment8.insertAdjacentElement('afterend', assignment9);
+assignment9.appendChild(container_assignment9);
+
+assignment9.style.backgroundColor = 'rgb(255, 246, 168)';
+container_assignment9.insertAdjacentElement('afterbegin', titleAssignment9);
+container_assignment9.insertAdjacentElement('beforeend', img_wrapper_assignment9);
+
+container_assignment9.insertAdjacentElement('beforeend', input_assignment9);
+container_assignment9.insertAdjacentElement('beforeend', button_assignment9);
+
+
+
 
 
 

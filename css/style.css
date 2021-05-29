@@ -34,7 +34,7 @@ h2 {
 .assignment1 {
     min-height: 350px;
     background-color: rgb(235, 235, 231);
-    /* background-color: rgb(252, 188, 243); */
+    /* background-color: rgb(255, 246, 168); */
 }
 
 .assignment1 .button_wrapper {
@@ -51,6 +51,7 @@ h2 {
     cursor: pointer;
     text-transform: uppercase;
     text-align: center;
+    margin-top: 10px;
 }
 
 .rectangle_wrapper {
@@ -61,4 +62,22 @@ h2 {
 
 .input_assignment4 {
     width: 50%;
+}
+
+.img_wrapper {
+    width: 90%;
+    min-height: 200px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn_big {
+    height: 40px;
+}
+
+img {
+    margin-top: 10px;
 }
