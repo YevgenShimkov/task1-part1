@@ -16,6 +16,7 @@ container_assignment1.classList.add('container');
 rectangle_black_assignment1.classList.add('rectangle');
 rectangle_black_assignment1.classList.add('rectangle_black');
 titleAssignment1.textContent = 'Assignment 1 / 2';
+assignment1.style.backgroundColor = 'rgb(235, 235, 231)';
 
 body.appendChild(assignment1);
 assignment1.appendChild(container_assignment1);
@@ -184,6 +185,7 @@ input_assignment4.placeholder = 'enter CSS selector (for example: .rectangle .bt
 assignment3.insertAdjacentElement('afterend', assignment4);
 assignment4.appendChild(container_assignment4);
 assignment4.style.backgroundColor = 'rgb(255, 215, 215)';
+input_assignment4.style.width = '50%';
 container_assignment4.insertAdjacentElement('afterbegin', titleAssignment4);
 container_assignment4.insertAdjacentElement('beforeend', input_assignment4);
 container_assignment4.insertAdjacentElement('beforeend', button_assingment4);
@@ -366,12 +368,91 @@ container_assignment9.insertAdjacentElement('beforeend', img_wrapper_assignment9
 container_assignment9.insertAdjacentElement('beforeend', input_assignment9);
 container_assignment9.insertAdjacentElement('beforeend', button_assignment9);
 
+// assignment 10
+const assignment10 = document.createElement('div'),
+    mouse_location = document.createElement('div'),
+    coordinat_wrapper = `<div>Coord X: <span id ="coordX">0</span></div>
+    <div>Coord Y: <span id ="coordY">0</span></div>`;
 
+let coord_X = '0',
+    coord_Y = '0';
 
+assignment10.classList.add('assignment10');
+assignment10.classList.add('info_box');
+mouse_location.classList.add('coordinate_mouse');
 
+assignment10.style.backgroundColor = 'rgb(68, 70, 69)';
 
+body.insertAdjacentElement('afterbegin', assignment10);
+assignment10.insertAdjacentElement('afterbegin', mouse_location);
+mouse_location.innerHTML = ('afterbegin', coordinat_wrapper);
+
+coord_X = assignment10.querySelector('#coordX'),
+    coord_Y = assignment10.querySelector('#coordY');
+
+body.addEventListener('mousemove', event => {
+    coord_X.innerHTML = `${event.clientX}`;
+    coord_Y.innerHTML = `${event.clientY}`;
+})
+
+body.addEventListener('mouseout', () => {
+    coord_X.innerHTML = `0`;
+    coord_Y.innerHTML = `0`;
+})
+
+// assignment 11
+const assignment11 = document.createElement('div'),
+    browser_language = document.createElement('div');
+
+assignment11.classList.add('assignment11');
+browser_language.classList.add('browser_language');
+
+assignment10.insertAdjacentElement('beforeend', assignment11);
+assignment11.insertAdjacentElement('afterbegin', browser_language);
+
+browser_language.textContent = 'Browser language: ' + window.navigator.language;
+
+// assignment 12
+const assignment12 = document.createElement('div'),
+    assignment12_message = document.createElement('div'),
+    geolocation_latitude = document.createElement('div'),
+    geolocation_longitude = document.createElement('div');
+
+assignment12.classList.add('assignment12');
+assignment12_message.classList.add('assignment12_message');
+geolocation_latitude.classList.add('geolocation');
+geolocation_longitude.classList.add('geolocation');
+
+assignment10.insertAdjacentElement('beforeend', assignment12);
+
+navigator.geolocation.getCurrentPosition(position => {
+    assignment12_message.textContent = 'I SEE YOU 🤡 ';
+    assignment12_message.style.color = 'rgb(202, 55, 55)';
+    assignment12.insertAdjacentElement('afterbegin', assignment12_message);
+    assignment12.insertAdjacentElement('beforeend', geolocation_latitude);
+    assignment12.insertAdjacentElement('beforeend', geolocation_longitude);
+    geolocation_latitude.textContent = 'latitude: ' + position.coords.latitude;
+    geolocation_longitude.textContent = 'longitude: ' + position.coords.longitude;
+});
+
+checkGeo();
+
+function checkGeo() {
+    let coordGeo = assignment12.querySelector('geolocation');
+    console.log(coordGeo);
+    if (coordGeo == null) {
+        assignment12_message.style.color = 'rgb(255, 180, 180)';
+        assignment12_message.textContent = 'I`ll find you later...🤡'
+        assignment12.insertAdjacentElement('beforeend', assignment12_message);
+        assignment12.insertAdjacentElement('afterbegin', geolocation_latitude);
+        assignment12.insertAdjacentElement('afterbegin', geolocation_longitude);
+        geolocation_latitude.textContent = 'latitude: no data';
+        geolocation_longitude.textContent = 'longitude: no data';
+    }
+}
 
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
     button.addEventListener('click', handleClick)
+
 });
