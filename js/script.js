@@ -3,7 +3,7 @@ const body = document.body;
 const assignment1 = document.createElement('section'),
     container_assignment1 = document.createElement("div"),
     rectangle_black_assignment1 = document.createElement('div'),
-    titleAssignment1 = document.createElement('h2'),
+    title_assignment1 = document.createElement('h2'),
     button_wrapper_assingment1 = `
         <div class = 'button_wrapper'>
             <button class='btn css_btn'>CSS</button>
@@ -15,12 +15,12 @@ assignment1.classList.add('assignment1');
 container_assignment1.classList.add('container');
 rectangle_black_assignment1.classList.add('rectangle');
 rectangle_black_assignment1.classList.add('rectangle_black');
-titleAssignment1.textContent = 'Assignment 1 / 2';
+title_assignment1.textContent = 'Assignment 1 / 2';
 assignment1.style.backgroundColor = 'rgb(235, 235, 231)';
 
 body.appendChild(assignment1);
 assignment1.appendChild(container_assignment1);
-container_assignment1.insertAdjacentElement('afterbegin', titleAssignment1);
+container_assignment1.insertAdjacentElement('afterbegin', title_assignment1);
 container_assignment1.insertAdjacentElement('beforeend', rectangle_black_assignment1);
 container_assignment1.insertAdjacentHTML('beforeend', button_wrapper_assingment1);
 
@@ -59,6 +59,9 @@ function choiseHideOrShow(currentButton, elements) {
 
 // on the background
 function handleClick(e) {
+    if (e.currentTarget == second_block_assignment15) {
+        e.stopPropagation();
+    }
     choiseAction(e.currentTarget);
 };
 
@@ -124,6 +127,15 @@ function choiseAction(currentButton) {
         case (currentButton == button_assignment9):
             addImgs(img_wrapper_assignment9, separationInput(input_assignment9.value));
             break;
+        case (currentButton == button_assignment14):
+            goTop();
+            break;
+        case (currentButton == first_block_assignment15):
+            alert('nope, still missed');
+            break;
+        case (currentButton == second_block_assignment15):
+            alert('yes, you hit target');
+            break;
     }
 };
 
@@ -140,7 +152,7 @@ function checkPresence(parent, elements) {
 
 //  assignment 3
 const assignment3 = document.createElement('section'),
-    titleAssignment3 = document.createElement('h2'),
+    title_assignment3 = document.createElement('h2'),
     container_assignment3 = document.createElement('div'),
     rectangle_black_assignment3 = document.createElement('div'),
     button_assingment3 = document.createElement('button'),
@@ -155,27 +167,27 @@ const assignment3 = document.createElement('section'),
 
 assignment3.classList.add('assignment3');
 container_assignment3.classList.add('container');
-titleAssignment3.textContent = 'Assignment 3';
+title_assignment3.textContent = 'Assignment 3';
 button_assingment3.classList.add('btn');
 button_assingment3.textContent = 'HIDE';
 
 assignment1.insertAdjacentElement('afterend', assignment3);
 assignment3.appendChild(container_assignment3);
 assignment3.style.backgroundColor = 'rgb(185, 250, 199)';
-container_assignment3.insertAdjacentElement('afterbegin', titleAssignment3);
+container_assignment3.insertAdjacentElement('afterbegin', title_assignment3);
 container_assignment3.insertAdjacentHTML('beforeend', rectangle_wrapper_assingment3);
 container_assignment3.insertAdjacentElement('beforeend', button_assingment3);
 
 //  assignment 4
 const assignment4 = document.createElement('section'),
-    titleAssignment4 = document.createElement('h2'),
+    title_assignment4 = document.createElement('h2'),
     container_assignment4 = document.createElement('div'),
     input_assignment4 = document.createElement('input'),
     button_assingment4 = document.createElement('button');
 
 assignment4.classList.add('assignment4');
 container_assignment4.classList.add('container');
-titleAssignment4.textContent = 'Assignment 4';
+title_assignment4.textContent = 'Assignment 4';
 button_assingment4.classList.add('btn');
 button_assingment4.textContent = 'HIDE';
 input_assignment4.classList.add('input_assignment4');
@@ -186,26 +198,26 @@ assignment3.insertAdjacentElement('afterend', assignment4);
 assignment4.appendChild(container_assignment4);
 assignment4.style.backgroundColor = 'rgb(255, 215, 215)';
 input_assignment4.style.width = '50%';
-container_assignment4.insertAdjacentElement('afterbegin', titleAssignment4);
+container_assignment4.insertAdjacentElement('afterbegin', title_assignment4);
 container_assignment4.insertAdjacentElement('beforeend', input_assignment4);
 container_assignment4.insertAdjacentElement('beforeend', button_assingment4);
 
 //  assignment 5
 const assignment5 = document.createElement('section'),
-    titleAssignment5 = document.createElement('h2'),
+    title_assignment5 = document.createElement('h2'),
     container_assignment5 = document.createElement('div'),
     rectangle_assignment5 = document.createElement('div');
 
 assignment5.classList.add('assignment5');
 container_assignment5.classList.add('container');
-titleAssignment5.textContent = 'Assignment 5';
+title_assignment5.textContent = 'Assignment 5';
 rectangle_assignment5.classList.add('rectangle');
 rectangle_assignment5.classList.add('rectangle_yellow');
 
 assignment4.insertAdjacentElement('afterend', assignment5);
 assignment5.appendChild(container_assignment5);
 assignment5.style.backgroundColor = 'rgb(203, 210, 252)';
-container_assignment5.insertAdjacentElement('beforeend', titleAssignment5);
+container_assignment5.insertAdjacentElement('beforeend', title_assignment5);
 container_assignment5.insertAdjacentElement('beforeend', rectangle_assignment5);
 rectangle_assignment5.style.backgroundColor = 'rgb(245, 241, 9)';
 rectangle_assignment5.addEventListener('click', firstAction);
@@ -226,14 +238,14 @@ function secondAction() {
 
 //  assignment 6
 const assignment6 = document.createElement('section'),
-    titleAssignment6 = document.createElement('h2'),
+    title_assignment6 = document.createElement('h2'),
     container_assignment6 = document.createElement('div'),
     rectangle_assignment6 = document.createElement('div'),
     button_assingment6 = document.createElement('button');
 
 assignment6.classList.add('assignment6');
 container_assignment6.classList.add('container');
-titleAssignment6.textContent = 'Assignment 6';
+title_assignment6.textContent = 'Assignment 6';
 rectangle_assignment6.textContent = 'Magic! YEP? :-D'
 rectangle_assignment6.classList.add('rectangle');
 rectangle_assignment6.classList.add('rectangle_red');
@@ -245,7 +257,7 @@ button_assingment6.style.height = '40px';
 assignment5.insertAdjacentElement('afterend', assignment6);
 assignment6.appendChild(container_assignment6);
 assignment6.style.backgroundColor = 'rgb(227, 252, 203)';
-container_assignment6.insertAdjacentElement('beforeend', titleAssignment6);
+container_assignment6.insertAdjacentElement('beforeend', title_assignment6);
 container_assignment6.insertAdjacentElement('beforeend', rectangle_assignment6);
 container_assignment6.insertAdjacentElement('beforeend', button_assingment6);
 rectangle_assignment6.style.backgroundColor = 'rgb(255, 0, 0)';
@@ -261,7 +273,7 @@ button_assingment6.addEventListener('mouseout', () => {
 
 //  assignment 7
 const assignment7 = document.createElement('section'),
-    titleAssignment7 = document.createElement('h2'),
+    title_assignment7 = document.createElement('h2'),
     container_assignment7 = document.createElement('div'),
     input_assignment7 = document.createElement('input'),
     rectangle_assignment7 = document.createElement('div');
@@ -271,7 +283,7 @@ container_assignment7.classList.add('container');
 rectangle_assignment7.classList.add('rectangle');
 rectangle_assignment7.classList.add('rectangle_green');
 rectangle_assignment7.classList.add('hidden');
-titleAssignment7.textContent = 'Assignment 7';
+title_assignment7.textContent = 'Assignment 7';
 input_assignment7.classList.add('input_assignment7');
 input_assignment7.placeholder = 'type';
 rectangle_assignment7.style.backgroundColor = 'rgb(16, 143, 5)';
@@ -281,7 +293,7 @@ rectangle_assignment7.style.height = '20px';
 assignment6.insertAdjacentElement('afterend', assignment7);
 assignment7.appendChild(container_assignment7);
 assignment7.style.backgroundColor = 'rgb(209, 209, 209)';
-container_assignment7.insertAdjacentElement('afterbegin', titleAssignment7);
+container_assignment7.insertAdjacentElement('afterbegin', title_assignment7);
 container_assignment7.insertAdjacentElement('beforeend', rectangle_assignment7);
 container_assignment7.insertAdjacentElement('beforeend', input_assignment7);
 
@@ -296,7 +308,7 @@ input_assignment7.addEventListener('keydown', () => {
 
 //  assignment 8
 const assignment8 = document.createElement('section'),
-    titleAssignment8 = document.createElement('h2'),
+    title_assignment8 = document.createElement('h2'),
     container_assignment8 = document.createElement('div'),
     input_assignment8 = document.createElement('input'),
     button_assignment8 = document.createElement('button'),
@@ -304,7 +316,7 @@ const assignment8 = document.createElement('section'),
 
 assignment8.classList.add('assignment8');
 container_assignment8.classList.add('container');
-titleAssignment8.textContent = 'Assignment 8';
+title_assignment8.textContent = 'Assignment 8';
 input_assignment8.classList.add('input_assignment8');
 input_assignment8.placeholder = 'Insert link to picture';
 button_assignment8.classList.add('btn');
@@ -317,7 +329,7 @@ assignment7.insertAdjacentElement('afterend', assignment8);
 assignment8.appendChild(container_assignment8);
 
 assignment8.style.backgroundColor = 'rgb(252, 188, 243)';
-container_assignment8.insertAdjacentElement('afterbegin', titleAssignment8);
+container_assignment8.insertAdjacentElement('afterbegin', title_assignment8);
 container_assignment8.insertAdjacentElement('beforeend', img_wrapper_assignment8);
 container_assignment8.insertAdjacentElement('beforeend', input_assignment8);
 container_assignment8.insertAdjacentElement('beforeend', button_assignment8);
@@ -342,7 +354,7 @@ function addImgs(parentNode, imgList) {
 
 //  assignment 9
 const assignment9 = document.createElement('section'),
-    titleAssignment9 = document.createElement('h2'),
+    title_assignment9 = document.createElement('h2'),
     container_assignment9 = document.createElement('div'),
     input_assignment9 = document.createElement('textarea'),
     img_wrapper_assignment9 = document.createElement('div'),
@@ -350,7 +362,7 @@ const assignment9 = document.createElement('section'),
 
 assignment9.classList.add('assignment9');
 container_assignment9.classList.add('container');
-titleAssignment9.textContent = 'Assignment 9';
+title_assignment9.textContent = 'Assignment 9';
 input_assignment9.classList.add('input_assignment9');
 input_assignment9.placeholder = 'Insert link to pictures';
 button_assignment9.classList.add('btn');
@@ -362,7 +374,7 @@ assignment8.insertAdjacentElement('afterend', assignment9);
 assignment9.appendChild(container_assignment9);
 
 assignment9.style.backgroundColor = 'rgb(255, 246, 168)';
-container_assignment9.insertAdjacentElement('afterbegin', titleAssignment9);
+container_assignment9.insertAdjacentElement('afterbegin', title_assignment9);
 container_assignment9.insertAdjacentElement('beforeend', img_wrapper_assignment9);
 
 container_assignment9.insertAdjacentElement('beforeend', input_assignment9);
@@ -428,31 +440,178 @@ assignment10.insertAdjacentElement('beforeend', assignment12);
 navigator.geolocation.getCurrentPosition(position => {
     assignment12_message.textContent = 'I SEE YOU 🤡 ';
     assignment12_message.style.color = 'rgb(202, 55, 55)';
+    geolocation_latitude.textContent = 'latitude: ' + position.coords.latitude;
+    geolocation_longitude.textContent = 'longitude: ' + position.coords.longitude;
     assignment12.insertAdjacentElement('afterbegin', assignment12_message);
     assignment12.insertAdjacentElement('beforeend', geolocation_latitude);
     assignment12.insertAdjacentElement('beforeend', geolocation_longitude);
-    geolocation_latitude.textContent = 'latitude: ' + position.coords.latitude;
-    geolocation_longitude.textContent = 'longitude: ' + position.coords.longitude;
 });
 
 checkGeo();
 
 function checkGeo() {
     let coordGeo = assignment12.querySelector('geolocation');
-    console.log(coordGeo);
     if (coordGeo == null) {
         assignment12_message.style.color = 'rgb(255, 180, 180)';
         assignment12_message.textContent = 'I`ll find you later...🤡'
+        geolocation_latitude.textContent = 'latitude: no data';
+        geolocation_longitude.textContent = 'longitude: no data';
         assignment12.insertAdjacentElement('beforeend', assignment12_message);
         assignment12.insertAdjacentElement('afterbegin', geolocation_latitude);
         assignment12.insertAdjacentElement('afterbegin', geolocation_longitude);
-        geolocation_latitude.textContent = 'latitude: no data';
-        geolocation_longitude.textContent = 'longitude: no data';
     }
 }
 
+// assignment 13
+const assignment13 = document.createElement('section'),
+    container_assignment13 = document.createElement('div'),
+    title_assignment13 = document.createElement('h2'),
+    subtitle_localStorage = document.createElement('h3'),
+    subtitle_cookies = document.createElement('h3'),
+    subtitle_sessionStorage = document.createElement('h3'),
+    text_area_localStorage = document.createElement('div'),
+    text_area_cookies = document.createElement('div'),
+    text_area_sessionStorage = document.createElement('div');
+
+
+assignment13.classList.add('assignment13');
+assignment13.style.backgroundColor = ' rgb(200, 208, 252)';
+container_assignment13.classList.add('container');
+title_assignment13.textContent = 'Assignment 13';
+subtitle_cookies.textContent = 'Cookies';
+subtitle_localStorage.textContent = 'LocalStorage';
+subtitle_sessionStorage.textContent = 'SessionStorage';
+text_area_localStorage.classList.add('text_area');
+text_area_localStorage.classList.add('text_area_local');
+text_area_localStorage.setAttribute('contenteditable', 'true');
+text_area_cookies.classList.add('text_area');
+text_area_cookies.classList.add('text_area_local');
+text_area_cookies.setAttribute('contenteditable', 'true');
+text_area_sessionStorage.classList.add('text_area');
+text_area_sessionStorage.classList.add('text_area_local');
+text_area_sessionStorage.setAttribute('contenteditable', 'true');
+
+assignment9.insertAdjacentElement('afterend', assignment13);
+assignment13.appendChild(container_assignment13);
+container_assignment13.insertAdjacentElement('afterbegin', title_assignment13);
+container_assignment13.insertAdjacentElement('beforeend', subtitle_localStorage);
+container_assignment13.insertAdjacentElement('beforeend', text_area_localStorage);
+container_assignment13.insertAdjacentElement('beforeend', subtitle_cookies);
+container_assignment13.insertAdjacentElement('beforeend', text_area_cookies);
+container_assignment13.insertAdjacentElement('beforeend', subtitle_sessionStorage);
+container_assignment13.insertAdjacentElement('beforeend', text_area_sessionStorage);
+
+function enteredText(e) {
+    choiseActionTextArea(e.currentTarget);
+}
+
+function choiseActionTextArea(curretnArea) {
+    switch (true) {
+        case (curretnArea === text_area_localStorage):
+            saveLocal();
+            break;
+        case (curretnArea == text_area_cookies):
+            saveCookies();
+            break;
+        case (curretnArea == text_area_sessionStorage):
+            saveSession();
+            break;
+    }
+}
+
+function saveLocal() {
+    localStorage.setItem('local-input', text_area_localStorage.innerHTML);
+};
+
+function saveCookies() {
+    document.cookie = text_area_cookies.innerHTML;
+};
+
+function saveSession() {
+    sessionStorage.setItem('session-input', text_area_sessionStorage.innerHTML);
+};
+
+function loadCache() {
+    text_area_localStorage.innerHTML = localStorage.getItem('local-input');
+    text_area_cookies.innerHTML = document.cookie;
+    text_area_sessionStorage.innerHTML = sessionStorage.getItem('session-input');
+};
+
+// assignment14
+const assignment14 = document.createElement('section'),
+    container_assignment14 = document.createElement('container'),
+    title_assignment14 = document.createElement('h2'),
+    button_assignment14 = document.createElement('button');
+
+assignment14.classList.add('assignment14');
+container_assignment14.classList.add('container');
+button_assignment14.classList.add('btn');
+title_assignment14.textContent = 'Assignment 14';
+button_assignment14.classList.add('btn_go_top');
+button_assignment14.classList.add('hidden');
+button_assignment14.textContent = 'go top';
+container_assignment14.style.minHeight = '100px';
+
+body.insertAdjacentElement('beforeend', assignment14);
+assignment14.appendChild(container_assignment14);
+container_assignment14.insertAdjacentElement('afterbegin', title_assignment14);
+container_assignment14.insertAdjacentElement('beforeend', button_assignment14);
+
+function goTop() {
+    window.scrollTo(top);
+}
+
+function checkPosition() {
+    if (window.pageYOffset > (document.documentElement.scrollHeight * 0.7)) {
+        removeHiddenStyle(assignment14.querySelectorAll('.btn_go_top'));
+    } else {
+        hiddenElement(assignment14.querySelectorAll('.btn_go_top'))
+    }
+}
+
+// assignment15
+const assignment15 = document.createElement('section'),
+    container_assignment15 = document.createElement('container'),
+    title_assignment15 = document.createElement('h2'),
+    first_block_assignment15 = document.createElement('div'),
+    second_block_assignment15 = document.createElement('div');
+
+assignment15.classList.add('assignment15');
+container_assignment15.classList.add('container');
+title_assignment15.textContent = 'Assignment 15';
+first_block_assignment15.classList.add('block');
+second_block_assignment15.classList.add('block');
+second_block_assignment15.classList.add('block_small');
+second_block_assignment15.textContent = 'Push the button';
+assignment15.style.backgroundColor = 'rgb(189 191 148)';
+
+assignment13.insertAdjacentElement('afterend', assignment15);
+assignment15.appendChild(container_assignment15);
+container_assignment15.insertAdjacentElement('afterbegin', title_assignment15);
+container_assignment15.insertAdjacentElement('beforeend', first_block_assignment15);
+first_block_assignment15.insertAdjacentElement('afterbegin', second_block_assignment15);
+
+
+
+
+
+
+
+
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
-    button.addEventListener('click', handleClick)
-
+    button.addEventListener('click', handleClick);
 });
+
+const blocks = document.querySelectorAll('.block');
+blocks.forEach(block => {
+    block.addEventListener('click', handleClick);
+});
+
+const text_areas = document.querySelectorAll('.text_area');
+text_areas.forEach(area => {
+    area.addEventListener('input', enteredText);
+})
+
+window.addEventListener("load", loadCache);
+window.addEventListener('scroll', checkPosition);
