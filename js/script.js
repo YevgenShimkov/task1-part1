@@ -136,6 +136,17 @@ function choiseAction(currentButton) {
         case (currentButton == second_block_assignment15):
             alert('yes, you hit target');
             break;
+        case (currentButton == button_assignment16):
+            removeHiddenStyle(body.querySelectorAll('.blocking_element'));
+            document.body.style.overflow = 'hidden';
+            body.classList.add('blocked');
+            break;
+        case (currentButton == blocking_element):
+            hiddenElement(body.querySelectorAll('.blocking_element'));
+            document.body.style.overflow = '';
+            body.classList.remove('blocked');
+            break;
+
     }
 };
 
@@ -403,8 +414,13 @@ coord_X = assignment10.querySelector('#coordX'),
     coord_Y = assignment10.querySelector('#coordY');
 
 body.addEventListener('mousemove', event => {
-    coord_X.innerHTML = `${event.clientX}`;
-    coord_Y.innerHTML = `${event.clientY}`;
+    if (document.querySelector('.blocked') == null) {
+        coord_X.innerHTML = `${event.clientX}`;
+        coord_Y.innerHTML = `${event.clientY}`;
+    } else {
+        coord_X.innerHTML = `bloked`;
+        coord_Y.innerHTML = `bloked`;
+    }
 })
 
 body.addEventListener('mouseout', () => {
@@ -547,10 +563,13 @@ assignment14.classList.add('assignment14');
 container_assignment14.classList.add('container');
 button_assignment14.classList.add('btn');
 title_assignment14.textContent = 'Assignment 14';
+title_assignment14.style.color = 'white';
 button_assignment14.classList.add('btn_go_top');
 button_assignment14.classList.add('hidden');
 button_assignment14.textContent = 'go top';
+button_assignment14.style.color = 'white';
 container_assignment14.style.minHeight = '100px';
+assignment14.style.backgroundColor = 'rgb(105, 104, 211)';
 
 body.insertAdjacentElement('beforeend', assignment14);
 assignment14.appendChild(container_assignment14);
@@ -591,9 +610,56 @@ container_assignment15.insertAdjacentElement('afterbegin', title_assignment15);
 container_assignment15.insertAdjacentElement('beforeend', first_block_assignment15);
 first_block_assignment15.insertAdjacentElement('afterbegin', second_block_assignment15);
 
+// assignment 16
+const assignment16 = document.createElement('section'),
+    container_assignment16 = document.createElement('container'),
+    title_assignment16 = document.createElement('h2'),
+    blocking_element = document.createElement('div'),
+    button_assignment16 = document.createElement('button');
+
+assignment16.classList.add('assignment16');
+container_assignment16.classList.add('container');
+button_assignment16.classList.add('btn');
+blocking_element.classList.add('blocking_element');
+blocking_element.classList.add('hidden');
+title_assignment16.textContent = 'Assignment 16';
+button_assignment16.textContent = 'switch';
+assignment16.style.backgroundColor = 'rgb(255, 255, 255)';
+blocking_element.style.backgroundColor = 'rgb(81, 81, 85)';
+
+assignment15.insertAdjacentElement('afterend', assignment16);
+assignment16.appendChild(container_assignment16);
+container_assignment16.insertAdjacentElement('afterbegin', title_assignment16);
+container_assignment16.insertAdjacentElement('beforeend', button_assignment16);
+body.insertAdjacentElement('afterbegin', blocking_element);
+
+blocking_element.addEventListener('click', handleClick)
+
+// assignment 17
+const assignment17 = document.createElement('section'),
+    container_assignment17 = document.createElement('container'),
+    title_assignment17 = document.createElement('h2'),
+    form_assignment17 = document.createElement('form'),
+    input_assignment17 = document.createElement('input');
+
+assignment17.classList.add('assignment17');
+container_assignment17.classList.add('container');
+title_assignment17.textContent = 'Assignment 17';
+assignment17.style.background = 'rgb(168, 226, 212)';
+form_assignment17.setAttribute('onsubmit', 'return drawShelves();');
+input_assignment17.setAttribute('type', 'submit');
+input_assignment17.setAttribute('value', 'GO');
+assignment16.insertAdjacentElement('afterend', assignment17);
+assignment17.appendChild(container_assignment17);
+container_assignment17.insertAdjacentElement('afterbegin', title_assignment17);
 
 
+container_assignment17.insertAdjacentElement('beforeend', form_assignment17);
+form_assignment17.insertAdjacentElement('afterbegin', input_assignment17)
 
+function drawShelves() {
+    return false;
+}
 
 
 
