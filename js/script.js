@@ -661,6 +661,72 @@ function drawShelves() {
     return false;
 }
 
+// assignment 18
+const assignment18 = document.createElement('section'),
+    container_assignment18 = document.createElement('container'),
+    title_assignment18 = document.createElement('h2'),
+    subtitle_assignment18 = document.createElement('h3'),
+    form_assignment18 = document.createElement('form'),
+    input_assignment18 = document.createElement('input'),
+    label_assignment18 = document.createElement('label'),
+    drop_area = document.createElement('div'),
+    drop_zona_attention = document.createElement('div'),
+    drop_zona = document.createElement('div');
+
+assignment18.classList.add('assignment18');
+container_assignment18.classList.add('container');
+input_assignment18.id = 'input_files';
+input_assignment18.style.display = 'none';
+input_assignment18.setAttribute('type', 'file');
+title_assignment18.textContent = 'Assignment 18';
+subtitle_assignment18.textContent = 'drag-n-drop';
+form_assignment18.classList.add('form_files');
+label_assignment18.classList.add('label_files');
+label_assignment18.setAttribute('for', 'input_files');
+assignment18.style.backgroundColor = 'rgb(233, 192, 192)';
+drop_area.classList.add('drop_area');
+drop_zona.classList.add('drop_zona');
+drop_zona_attention.classList.add('drop_zona_attention');
+drop_zona_attention.classList.add('hidden');
+drop_zona.textContent = 'H';
+
+assignment17.insertAdjacentElement('afterend', assignment18);
+assignment18.appendChild(container_assignment18);
+container_assignment18.insertAdjacentElement('afterbegin', title_assignment18);
+container_assignment18.insertAdjacentElement('beforeend', subtitle_assignment18);
+container_assignment18.insertAdjacentElement('beforeend', form_assignment18);
+form_assignment18.insertAdjacentElement('afterbegin', input_assignment18);
+form_assignment18.insertAdjacentElement('beforeend', label_assignment18);
+label_assignment18.appendChild(drop_area);
+drop_area.insertAdjacentElement('afterend', drop_zona);
+drop_area.insertAdjacentElement('afterend', drop_zona_attention);
+
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    form_assignment18.addEventListener(eventName, preventDefaults)
+});
+
+function preventDefaults(e) {
+    e.preventDefault()
+        // e.stopPropagation()
+};
+
+['dragenter', 'dragover'].forEach(eventName => {
+    form_assignment18.addEventListener(eventName, light)
+});
+['dragleave', 'drop'].forEach(eventName => {
+    form_assignment18.addEventListener(eventName, unlight)
+})
+
+function unlight() {
+    drop_zona_attention.classList.add('hidden')
+};
+
+function light() {
+    drop_zona_attention.classList.remove('hidden')
+};
+
+
+
 
 
 
